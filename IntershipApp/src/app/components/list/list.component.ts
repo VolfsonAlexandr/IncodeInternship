@@ -15,9 +15,10 @@ import { ClientService } from '../../services/clientServise.service';
 })
 export class ListComponent {
 
-    strs: string[] = ['1', '2', '3'];
+    clientService: ClientService
 
-    constructor(private clientService: ClientService) {
+    constructor(clientService: ClientService) {
+        this.clientService = clientService;
         }
 
     ngOnInit() {

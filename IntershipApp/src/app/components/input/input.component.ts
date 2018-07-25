@@ -15,6 +15,9 @@ import { ClientService } from '../../services/clientServise.service';
 })
 export class InputComponent {
 
-  constructor(private clientService: ClientService) {
+  clientService: ClientService;
+
+  constructor(clientService: ClientService) {
+    this.clientService = clientService;
    }
 }
