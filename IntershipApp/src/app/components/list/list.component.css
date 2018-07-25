@@ -1,0 +1,17 @@
+.item {
+    width: 360px;
+    background: rgba(95, 95, 228, 0.938);
+}
+
+.item:hover {
+    background: rgba(59, 59, 236, 0.938);
+    cursor: pointer;
+}
+
+img {
+    margin-right: 10px;
+}
+
+.small-image {
+    border-radius: 50%;
+}

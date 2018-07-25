@@ -6,6 +6,9 @@ import { FilterPipe } from './filters/filter.pipe';
 import { FormsModule }   from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { Client } from './models/client';
+import { ClientService } from './services/clientServise.service';
+import { InputComponent } from './components/input/input.component';
+import { ListComponent } from './components/list/list.component';
 
 @Component({
   selector: 'app-root',
@@ -15,23 +18,18 @@ import { Client } from './models/client';
 export class AppComponent {
 
   title = 'Clients';
-  clients: Client [];
-  selectedClient: Client;
-  isLoaded: boolean = false;
 
-  constructor(private http: HttpClient, private json: JsonService) {
+  constructor( private clientService: ClientService) {
    }
 
     ngOnInit(){
-      this.json.getJSON().subscribe((data: Client[]) => {
-         this.clients = data;
-         this.selectedClient = this.clients[0];
-         this.isLoaded = true;
-      });
-
     }
 
-  SelectClient(index: number) {
-    this.selectedClient = this.clients[index];
-  }
+    getSelectedClient(): Client {
+      return this.clientService.getSelectedClient();
+    }
+
+    isLoaded(): boolean {
+      return this.clientService.isClientsLoaded();
+    }
 }

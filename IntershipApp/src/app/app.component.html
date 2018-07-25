@@ -1,24 +1,15 @@
-<div class="inputFieldDiv">
-  <mat-form-field>
-    <input [(ngModel)]="searchText" placeholder="Search text" class="searchText">
-  </mat-form-field>
-</div>
+<search></search>
 
-<mat-list role="list" >
-  <mat-list-item role="listitem" class="item" *ngFor="let client of clients| filter : searchText; let i = index" (click)="SelectClient(i)">	
-    <img src={{client.general.avatar}} alt="avatar" height="30px" width="30px" class="small-image">
-    {{client.general.firstName}},  {{client.job.title}}
-  </mat-list-item>
-</mat-list>
+<clients-list></clients-list>
 
-<div class="info" *ngIf="isLoaded==true">
-  <img src={{selectedClient.general.avatar}} alt="avatar">
-  <h1 class="first-name">{{selectedClient.general.firstName}}</h1>
-  <h1 class="last-name">{{selectedClient.general.lastName}}</h1>
-  <h3 class="job">{{selectedClient.job.company}} - {{selectedClient.job.title}}</h3>
+<div class="info" *ngIf="isLoaded()==true">
+  <img src={{getSelectedClient().general.avatar}} alt="avatar">
+  <h1 class="first-name">{{getSelectedClient().general.firstName}}</h1>
+  <h1 class="last-name">{{getSelectedClient().general.lastName}}</h1>
+  <h3 class="job">{{getSelectedClient().job.company}} - {{getSelectedClient().job.title}}</h3>
   <h2>Address:</h2>
-  <h3>Street: {{selectedClient.address.street}}, City: {{selectedClient.address.city}}</h3>
-  <h3>ZipCode: {{selectedClient.address.zipCode}}, Country: {{selectedClient.address.country}}</h3>
+  <h3>Street: {{getSelectedClient().address.street}}, City: {{getSelectedClient().address.city}}</h3>
+  <h3>ZipCode: {{getSelectedClient().address.zipCode}}, Country: {{getSelectedClient().address.country}}</h3>
   <h2>Contact:</h2>
-  <h3>Email: {{selectedClient.contact.email}}, Phone: {{selectedClient.contact.phone}}</h3>
+  <h3>Email: {{getSelectedClient().contact.email}}, Phone: {{getSelectedClient().contact.phone}}</h3>
 </div>
