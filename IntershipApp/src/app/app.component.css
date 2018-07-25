@@ -33,3 +33,14 @@ img {
     left: 140px;
     top: 75px; 
 }
+
+.searchText {
+    width: 355px;
+    height: 24px;
+}
+
+.inputFieldDiv {
+    width: 360px;
+    background: rgba(95, 95, 228, 0.938);
+    margin-bottom: -10px;
+}

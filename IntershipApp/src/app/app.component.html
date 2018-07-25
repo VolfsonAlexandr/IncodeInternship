@@ -1,11 +1,17 @@
+<div class="inputFieldDiv">
+  <mat-form-field>
+    <input [(ngModel)]="searchText" placeholder="Search text" class="searchText">
+  </mat-form-field>
+</div>
+
 <mat-list role="list" >
-  <mat-list-item role="listitem" class="item" *ngFor="let client of clients; let i = index" (click)="SelectClient(i)">	
+  <mat-list-item role="listitem" class="item" *ngFor="let client of clients| filter : searchText; let i = index" (click)="SelectClient(i)">	
     <img src={{client.general.avatar}} alt="avatar" height="30px" width="30px" class="small-image">
     {{client.general.firstName}},  {{client.job.title}}
   </mat-list-item>
 </mat-list>
 
-<div class="info">
+<div class="info" *ngIf="isLoaded==true">
   <img src={{selectedClient.general.avatar}} alt="avatar">
   <h1 class="first-name">{{selectedClient.general.firstName}}</h1>
   <h1 class="last-name">{{selectedClient.general.lastName}}</h1>

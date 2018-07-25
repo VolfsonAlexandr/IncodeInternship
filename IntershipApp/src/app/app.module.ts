@@ -9,15 +9,20 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { JsonService } from './services/jsonService.service';
 
+import { FilterPipe } from './filters/filter.pipe';
+import { FormsModule }   from '@angular/forms';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [JsonService],
   bootstrap: [AppComponent]
