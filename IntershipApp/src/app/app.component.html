@@ -15,9 +15,7 @@
   <img src={{selectedClient.general.avatar}} alt="avatar">
   <h1 class="first-name">{{selectedClient.general.firstName}}</h1>
   <h1 class="last-name">{{selectedClient.general.lastName}}</h1>
-  <h2>Job:</h2>
-  <h3>Title: {{selectedClient.job.company}}</h3>
-  <h3>Company name: {{selectedClient.job.title}}</h3>
+  <h3 class="job">{{selectedClient.job.company}} - {{selectedClient.job.title}}</h3>
   <h2>Address:</h2>
   <h3>Street: {{selectedClient.address.street}}, City: {{selectedClient.address.city}}</h3>
   <h3>ZipCode: {{selectedClient.address.zipCode}}, Country: {{selectedClient.address.country}}</h3>

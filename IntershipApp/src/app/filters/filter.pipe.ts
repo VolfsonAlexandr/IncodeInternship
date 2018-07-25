@@ -1,9 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Client } from '../models/client';
 @Pipe({
   name: 'filter'
 })
 export class FilterPipe implements PipeTransform {
-    transform(items: any[], searchText: string): any[] {
+    transform(items: Client[], searchText: string): Client[] {
     if(!items) return [];
     if(!searchText) return items;
     searchText = searchText.toLowerCase();
@@ -13,9 +14,8 @@ export class FilterPipe implements PipeTransform {
         return res;
    } 
 
-   check(text: string, it: any) {
-    console.log('333');
-       return it.address.street.toLowerCase().includes(text) || 
+   check(text: string, it: Client) {
+       return it.address.street.toLowerCase().includes(text) ||
        it.address.city.toLowerCase().includes(text) ||
        it.address.zipCode.toLowerCase().includes(text) ||
        it.address.country.toLowerCase().includes(text) ||

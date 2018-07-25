@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable} from 'rxjs';
+import { Client } from '../models/client';
 
 @Injectable()
 export class JsonService {
@@ -8,7 +9,7 @@ export class JsonService {
 
     jsonUrl = '../assets/clients.json';
 
-    public getJSON(): Observable<any> {
-        return this.http.get(this.jsonUrl)
+    public getJSON(): Observable<Client[]> {
+        return this.http.get<Client[]>(this.jsonUrl);
       }
 }

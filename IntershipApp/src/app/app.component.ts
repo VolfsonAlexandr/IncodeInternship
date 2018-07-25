@@ -5,6 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { FilterPipe } from './filters/filter.pipe';
 import { FormsModule }   from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { Client } from './models/client';
 
 @Component({
   selector: 'app-root',
@@ -13,24 +14,22 @@ import { NgModule } from '@angular/core';
 })
 export class AppComponent {
 
-  strs = ['one', 'two', 'three', 'four', 'five'];
-  title = 'app';
-  clients: any;
-  selectedClient: any;
+  title = 'Clients';
+  clients: Client [];
+  selectedClient: Client;
   isLoaded: boolean = false;
 
   constructor(private http: HttpClient, private json: JsonService) {
-    console.log('ok');
    }
 
-   ngOnInit(){
-    this.json.getJSON().subscribe(data => {
+    ngOnInit(){
+      this.json.getJSON().subscribe((data: Client[]) => {
          this.clients = data;
          this.selectedClient = this.clients[0];
          this.isLoaded = true;
-     });
+      });
 
-}
+    }
 
   SelectClient(index: number) {
     this.selectedClient = this.clients[index];

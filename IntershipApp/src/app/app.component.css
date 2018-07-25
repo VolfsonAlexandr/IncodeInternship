@@ -25,13 +25,19 @@ img {
 .first-name {
     position: absolute;
     left: 140px;
-    top: 24px;
+    top: -15px;
 }
 
 .last-name {
     position: absolute;
     left: 140px;
-    top: 75px; 
+    top: 30px; 
+}
+
+.job {
+    position: absolute;
+    left: 140px;
+    top: 70px; 
 }
 
 .searchText {
@@ -42,5 +48,5 @@ img {
 .inputFieldDiv {
     width: 360px;
     background: rgba(95, 95, 228, 0.938);
-    margin-bottom: -10px;
+    margin-bottom: -5px;
 }
