@@ -22,7 +22,7 @@ export class AppComponent {
   strs = ['one', 'two', 'three', 'four', 'five'];
   title = 'app';
   clients: any;
-  selectedClient;
+  selectedClient: any;
 
   SelectClient(index: number) {
     this.selectedClient = this.clients[index];

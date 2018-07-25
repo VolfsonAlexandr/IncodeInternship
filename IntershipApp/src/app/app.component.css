@@ -10,5 +10,26 @@
 
 img {
     margin-right: 10px;
-    /* padding-right: 5px; */
+}
+
+.small-image {
+    border-radius: 50%;
+}
+
+.info {
+    left: 400px;
+    top: 16px;
+    position: fixed;
+}
+
+.first-name {
+    position: absolute;
+    left: 140px;
+    top: 24px;
+}
+
+.last-name {
+    position: absolute;
+    left: 140px;
+    top: 75px; 
 }
